@@ -1,0 +1,21 @@
+// задаем основные параметры шрифта в виде миксинов и переменных
+
+@font-family: 'YS Text', 'Helvetica Neue', Arial, sans-serif;
+@font-type-header: Verdana, Arial, Helvetica, sans-serif;
+@font-normal-size: 13px;
+
+.font-base() {
+   font-family: @font-family;
+   font-weight: 400;
+   font-style: normal;
+   font-size: @font-normal-size;
+   src: @src;
+}
+
+.font-light() {
+   .font-base();
+   font-weight: 300;
+}
+
+@font-title-aside: 14px;
+@font-btn-small: 12px;

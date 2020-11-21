@@ -1,0 +1,45 @@
+.headline {
+	color: @color-header;
+	line-height: 42px;
+	font-size: 13px;
+    margin-right: 234px;
+    margin-left: 10px;
+    
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        &:nth-child(1) {
+            width: 300px;
+            font-size: 13px;
+        }
+    }
+
+    &__geolink {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__data-time {
+        font-family: @font-type-header;
+    }
+
+    &__bookmarks {
+        opacity: .24;
+        width: 16px;
+        height: 20px;
+        background-image: url(../../icons/bookmark.svg);
+        background-repeat: no-repeat;
+        margin-right: 24px;
+    }
+
+    &__notifier {
+        opacity: .24;
+        width: 16px;
+        height: 20px;
+        background-image: url(../../icons/notification.svg);
+        background-repeat: no-repeat;
+    }
+}

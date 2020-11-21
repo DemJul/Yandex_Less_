@@ -1,0 +1,89 @@
+.link {
+	font-size: 13px;
+    text-decoration: none;
+
+    
+    &:hover {
+        color: @color-link;
+        cursor: pointer;
+
+        & .link__img-main {
+            position: relative;
+            top: -5px;
+        }
+    }
+
+    &:visited {
+        color: @color-base;
+
+        &:hover{
+            color: @color-link;
+        }
+    }
+
+    &._link-transition-left:hover {
+        position: relative;
+        left: -15px;
+    }
+
+    &__title-aside._bold {
+        font-weight: 600;
+    }
+
+    &__aside {
+        text-align: center;
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+    &._link-middle{
+        color: @color-link-middle;
+    }
+
+    &__img {
+        width: 14px;
+        height: 14px;
+        background-size: 14px;
+        margin-right: 6px;
+        background-image: url(https://yastatic.net/s3/home-static/_/1/a/UOr5Wu-4cx5c3GoI7LnUdvM9k.svg);
+
+        &-main {
+            width: 44px;
+            height: 44px;
+        }
+
+        &-small {
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            background-color: @color-link;
+        }
+    }
+
+    &__text{
+        &._link-text-add{
+            font-weight: 700;
+            font-size: 12px;
+        }
+    }
+
+    &._link-main {
+        color: @color-main;
+        margin-right: 12px;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    &._link-text-option {
+        font-weight: 200;
+        color: @color-option;
+        margin-left: 12px;
+    }
+
+    &__icon:hover {
+        opacity: .5;
+    }
+
+    
+    
+}
