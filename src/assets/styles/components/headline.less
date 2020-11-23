@@ -1,45 +1,28 @@
 .headline {
-	color: @color-header;
-	line-height: 42px;
-	font-size: 13px;
+    color: @color-header;
+    line-height: 42px;
     margin-right: 234px;
     margin-left: 10px;
-    
+
     &__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        .display();
 
         &:nth-child(1) {
             width: 300px;
-            font-size: 13px;
         }
     }
 
     &__geolink {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        .display();
     }
 
     &__data-time {
-        font-family: @font-type-header;
+        .font-header();
     }
+}
 
-    &__bookmarks {
-        opacity: .24;
-        width: 16px;
-        height: 20px;
-        background-image: url(../../icons/bookmark.svg);
-        background-repeat: no-repeat;
-        margin-right: 24px;
-    }
-
-    &__notifier {
-        opacity: .24;
-        width: 16px;
-        height: 20px;
-        background-image: url(../../icons/notification.svg);
-        background-repeat: no-repeat;
-    }
+.display() {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

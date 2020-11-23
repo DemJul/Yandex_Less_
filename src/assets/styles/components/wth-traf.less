@@ -1,6 +1,5 @@
-.wth-traf
-{
-	display: flex;
+.wth-traf {
+    display: flex;
     flex-direction: column;
 
     &__info {
@@ -15,38 +14,14 @@
     }
 
     &__current-info {
-        display: flex;
-        align-items: center;
-        font-size: 26px;
-        margin-right: 9px;
+        .font-wth-traf();
+        margin-right: 12px;
     }
 
-    &__current-value {
-        font-size: 26px;
-    }
-
-    &__img-weather{
-        width: 48px;
-        height: 48px;
-        background-image: url(https://yastatic.net/s3/home-static/2020-11-16-0/common/blocks/weather-icons/general/skc-n.png);    
-    }
-
-    &__img-traffic {
-        width: 48px;
-        height: 48px;
-        background-image: url(https://yastatic.net/s3/home-static/_/W/6/3iKv0HwMyq3LM_iMXrpDbLZkM.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    &__current-addition {
-        margin-left: 12px;
-    }
-
-    &__block{
+    &__block {
         &:last-child {
             margin-top: 18px;
         }
     }
-    
+
 }

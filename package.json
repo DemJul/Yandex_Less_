@@ -9,7 +9,7 @@
     "build": "gulp build"
   },
   "keywords": [],
-  "author": "MaxSamokhin",
+  "author": "DemJul",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

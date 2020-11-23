@@ -1,20 +1,18 @@
 .notif-email{
-    &-titles {
+    &__titles {
         display: flex;
         justify-content: space-between;
-        font-size: @font-title-aside;
+        .font-title();
     }
 
     &__button {
         margin-top: 18px;
         padding: 7px 14px 8px;
-        font-size: @font-btn-small;
         border-radius: 3px;
         background: @bgr-btn-small;
         border: none;
         width: 100%;
         text-align: center;
-        font-size: @font-normal-size;
 
         &:hover {
             cursor: pointer;

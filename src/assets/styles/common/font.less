@@ -1,5 +1,11 @@
 // подключаем шрифт через font-face
-@font-face {
-	font-family: YS Text;
-	@src: url(../../fonts/YandexSansText-Regular.ttf);
+
+.font-face(@font-family, @font-weight, @path) {
+    @font-face {
+        font-family: @font-family;
+        src: url("@{path}.woff2");
+        font-weight: @font-weight;
+    }
 }
+
+.font-face("YS Text", 400, "./fonts/YandexSans-Regular");

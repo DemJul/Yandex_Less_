@@ -3,19 +3,64 @@
 @font-family: 'YS Text', 'Helvetica Neue', Arial, sans-serif;
 @font-type-header: Verdana, Arial, Helvetica, sans-serif;
 @font-normal-size: 13px;
+@font-small: 12px;
+@font-title: 15px;
+@font-input: 14px;
+@font-button: 16px;
+@font-btn-hover: 17px;
+@font-wth-traf: 26px;
 
 .font-base() {
    font-family: @font-family;
    font-weight: 400;
    font-style: normal;
    font-size: @font-normal-size;
-   src: @src;
 }
 
 .font-light() {
    .font-base();
-   font-weight: 300;
+   font-weight: 200;
 }
 
-@font-title-aside: 14px;
-@font-btn-small: 12px;
+.font-header() {
+   .font-base();
+   font-family: @font-type-header;
+}
+
+.font-bold(@size: @font-normal-size) {
+   .font-base();
+   font-weight: 600;
+   font-size: @size;
+}
+
+.font-small(@weight: 700) {
+   .font-base();
+   font-weight: @weight;
+   font-size: @font-small;
+}
+
+.font-title() {
+   .font-base();
+   font-weight: 500;
+   font-size: @font-title;
+}
+
+.font-input() {
+   .font-base();
+   font-size: @font-input;
+}
+
+.font-button() {
+   .font-base();
+   font-size: @font-button;
+}
+
+.font-btn-hover() {
+   .font-base();
+   font-size: @font-btn-hover;
+}
+
+.font-wth-traf() {
+   .font-base();
+   font-size: @font-wth-traf;
+}
