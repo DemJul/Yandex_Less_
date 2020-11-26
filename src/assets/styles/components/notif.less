@@ -1,12 +1,24 @@
 .notif {
     top: 10px;
-    right: 2px;
-    width: 200px;
+    right: 0px;
+    width: 180px;
+    .font-notif();
+    margin-right: 6px;
+
 
     &__block {
-        margin-right: 6px;
         border-radius: 8px;
         box-shadow: 0 0 32px @clr-shadow-aside;
-        padding: 12px 14px;
+        margin-bottom: 7px;
+
+        &._coronavirus {
+            padding: 12px 14px;
+        }
+
+        &._messenger {
+            padding: 12px 14px;
+            height: 16px;
+            display: flex;
+        }
     }
 }

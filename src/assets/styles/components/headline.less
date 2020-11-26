@@ -1,8 +1,9 @@
 .headline {
     color: @color-header;
     line-height: 42px;
-    margin-right: 234px;
-    margin-left: 10px;
+    margin-right: 210px;
+    margin-top: 10px;
+    padding-left: 20px;
 
     &__item {
         .display();
@@ -14,15 +15,15 @@
 
     &__geolink {
         .display();
+        padding-right: 16px;
     }
 
     &__data-time {
-        .font-header();
+        .font-header-light()
     }
 }
 
 .display() {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: baseline;
 }

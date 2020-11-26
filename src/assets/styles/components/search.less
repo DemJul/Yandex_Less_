@@ -11,27 +11,32 @@
         min-width: 921px;
         margin: auto;
 
-        &::after {
-            content: '';
-            position: relative;
-            border: 20px solid transparent;
-            border-left: 20px solid @color-search;
-            left: -14.9px;
-        }
+    }
+
+    &__arrow {
+        width: 10px;
+        height: 40px;
+        fill: @color-search;
+    }
+
+    &__input-wrapper {
+        height: 40px;
+        width: 100%;
+        border: 3px solid @color-search;
+        box-sizing: border-box;
+        border-radius: 5px 0 0 5px;
+        display: flex;
+        align-items: center;
     }
 
     &__input {
         .font-input();
-        height: 40px;
         width: 100%;
-        border: 2px solid @color-search;
+        border: 0 solid transparent;
         box-sizing: border-box;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 18px;
-        color: @color-input;
-        border-radius: 3px;
+        color: @color-base;
         line-height: 16px;
+        padding-left: 11px;
 
         &:focus {
             outline: none;
@@ -45,13 +50,69 @@
         width: 77px;
         margin-right: 15px;
         margin-left: -2px;
-        .font-button();
+        .font-middle();
         line-height: 36px;
         text-align: center;
         border: 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            border: 20px solid transparent;
+            border-left: 20px solid @color-search;
+            left: 1px;
+            right: 0px;
+            transform: translate(100%, -38px);
+
+        }
 
         &:hover {
-            .font-btn-hover();
+            background: @color-search-dark;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                border: 20px solid transparent;
+                border-left: 20px solid @color-search-dark;
+                left: 1px;
+                right: 0px;
+                transform: translate(100%, -38px);
+            }
+        }
+
+        &:focus {
+            outline: none;
         }
     }
+
+    &__img {
+
+        width: 32px;
+        height: 100%;
+        padding-right: 4px;
+        box-sizing: border-box;
+        fill: @color-header;
+        opacity: .45;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .90;
+        }
+
+        &._last {
+            padding-right: 0;
+            width: 36px;
+            margin-top: 20px;
+            opacity: .90;
+
+            &:hover {
+                fill: @color-grey-dark;
+            }
+        }
+
+    }
+
 }

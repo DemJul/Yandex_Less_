@@ -4,11 +4,10 @@
 @font-type-header: Verdana, Arial, Helvetica, sans-serif;
 @font-normal-size: 13px;
 @font-small: 12px;
-@font-title: 15px;
 @font-input: 14px;
-@font-button: 16px;
-@font-btn-hover: 17px;
+@font-middle: 16px;
 @font-wth-traf: 26px;
+@font-header-light: 11px;
 
 .font-base() {
    font-family: @font-family;
@@ -27,6 +26,11 @@
    font-family: @font-type-header;
 }
 
+.font-header-light(){
+   .font-base();
+   font-size: @font-header-light;
+}
+
 .font-bold(@size: @font-normal-size) {
    .font-base();
    font-weight: 600;
@@ -42,7 +46,6 @@
 .font-title() {
    .font-base();
    font-weight: 500;
-   font-size: @font-title;
 }
 
 .font-input() {
@@ -50,17 +53,17 @@
    font-size: @font-input;
 }
 
-.font-button() {
+.font-middle() {
    .font-base();
-   font-size: @font-button;
-}
-
-.font-btn-hover() {
-   .font-base();
-   font-size: @font-btn-hover;
+   font-size: @font-middle;
 }
 
 .font-wth-traf() {
    .font-base();
    font-size: @font-wth-traf;
+}
+
+.font-notif() {
+   .font-base();
+   font-size: 12px;
 }
