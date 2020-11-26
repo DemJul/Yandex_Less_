@@ -58,7 +58,7 @@ gulp.task("fonts", function() {
 });
 
 gulp.task("icons", function() {
-    return gulp.src("./src/assets/icons/*").pipe(gulp.dest("./dist/icons"));
+    return gulp.src("./src/assets/images/*").pipe(gulp.dest("./dist/images"));
 });
 
 gulp.task("serve", function() {
