@@ -8,6 +8,11 @@
         align-items: center;
     }
 
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+
     &__subtitle {
         list-style-type: none;
         display: inline;
@@ -27,6 +32,10 @@
 
         &:last-child {
             margin-top: 18px;
+        }
+
+        &:hover .dropdown {
+            visibility: visible;
         }
     }
 

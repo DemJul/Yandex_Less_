@@ -3,7 +3,13 @@
     height: 172px;
 
     &__titles {
+        display: flex;
+        align-items: center;
         .font-title();
         line-height: 1.25;
+    }
+
+    &:hover .dropdown {
+        visibility: visible;
     }
 }

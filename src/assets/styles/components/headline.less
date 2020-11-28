@@ -16,10 +16,21 @@
     &__geolink {
         .display();
         padding-right: 16px;
+
+        &:hover {
+            color: @color-link;
+        }
+        &:focus {
+            outline: 2px solid @color-search;
+        }
     }
 
     &__data-time {
-        .font-header-light()
+        .font-header-light();
+
+        &:focus {
+            outline: 2px solid @color-search;
+        }
     }
 }
 

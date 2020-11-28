@@ -2,6 +2,11 @@
     &__logo {
         .img-size(140px, 100px);
         margin-left: -140px;
+        transform: translateY(-6px);
+
+        &:focus {
+            outline: 2px solid @color-search;
+        }
     }
 
     &__find {

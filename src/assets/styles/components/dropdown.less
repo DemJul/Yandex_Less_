@@ -1,0 +1,21 @@
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 13px;
+    width: 12px;
+    padding-left: 12px;
+    visibility: hidden;
+
+    &__circle {
+        width: 3px;
+        height: 3px;
+        background: @color-header;
+        border-radius: 50%;
+    }
+
+    &:hover .dropdown__circle {
+        background: @color-base;
+        transition: background .4s;
+    }
+}
