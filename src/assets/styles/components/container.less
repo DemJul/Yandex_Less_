@@ -1,7 +1,12 @@
 .container {
-    padding: 0;
-    margin: 0;
-    .font-base();
+
+    &._yandex {
+        .ya-font-base();
+    }
+    
+    &._mail {
+        .m-font-base(@m-font-family);
+    }
 
     &__block {
         display: flex;
@@ -20,6 +25,19 @@
         max-width: 921px;
     }
 
+    &__column {
+        
+        border: 2px solid red;
+        &:nth-child(1) {
+            width: 300px;
+            margin-right: 20px;
+        }
+
+        &:nth-child(2) {
+            width: 940px;
+        }
+    }
+
     &__right {
         float: right;
         position: fixed;
@@ -30,11 +48,30 @@
         flex-direction: column;
         max-width: 921px;
         margin: auto;
+
+        &._mail {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px 118px;
+            max-width: none;
+        }
     }
 
     &__svg-store {
         &._hidden {
             .hidden();
+        }
+    }
+
+    // Mail
+    &__box {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px @m-clr-shadow;
+
+        &:hover {
+            box-shadow: 0 4px 20px 0 @m-clr-shadow-hover1,0 2px 0 0 @m-clr-shadow-hover2;
+            transition: box-shadow .5s;
         }
     }
 }

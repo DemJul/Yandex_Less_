@@ -1,6 +1,8 @@
 // задаем основные параметры шрифта в виде миксинов и переменных
 
-@font-family: 'YS Text', 'Helvetica Neue', Arial, sans-serif;
+@ya-font-family: 'YS Text', 'Helvetica Neue', Arial, sans-serif;
+@m-header-font-family: 'Helvetica Neue', Arial, sans-serif;
+@m-font-family: 'Helvetica', Arial, sans-serif;
 @font-type-header: Verdana, Arial, Helvetica, sans-serif;
 @font-normal-size: 13px;
 @font-small: 12px;
@@ -9,61 +11,60 @@
 @font-wth-traf: 26px;
 @font-header-light: 11px;
 
-.font-base() {
+.ya-font-base() {
+   font-family: @ya-font-family;
+   font-weight: 400;
+   font-style: normal;
+   font-size: @font-normal-size;
+}
+
+.m-font-base(@font-family: @m-font-family) {
    font-family: @font-family;
    font-weight: 400;
    font-style: normal;
    font-size: @font-normal-size;
 }
 
-.font-light() {
-   .font-base();
+.font-light(@size: @font-normal-size) {
+   font-size: @size;
    font-weight: 200;
+
 }
 
 .font-header() {
-   .font-base();
    font-family: @font-type-header;
 }
 
-.font-header-light(){
-   .font-base();
+.font-header-light() {
    font-size: @font-header-light;
 }
 
 .font-bold(@size: @font-normal-size) {
-   .font-base();
    font-weight: 600;
    font-size: @size;
 }
 
 .font-small(@weight: 700) {
-   .font-base();
    font-weight: @weight;
    font-size: @font-small;
 }
 
 .font-title() {
-   .font-base();
    font-weight: 500;
 }
 
 .font-input() {
-   .font-base();
    font-size: @font-input;
 }
 
 .font-middle() {
-   .font-base();
    font-size: @font-middle;
 }
 
 .font-wth-traf() {
-   .font-base();
    font-size: @font-wth-traf;
 }
 
 .font-notif() {
-   .font-base();
    font-size: 12px;
 }

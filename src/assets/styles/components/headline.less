@@ -1,9 +1,21 @@
 .headline {
-    color: @color-header;
-    line-height: 42px;
-    margin-right: 210px;
-    margin-top: 10px;
-    padding-left: 20px;
+
+    &._yandex {
+        color: @color-header;
+        line-height: 42px;
+        margin-right: 210px;
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+
+    &._mail {
+        margin-left: 14px;
+        margin-right: 12px;
+        .m-font-base(@m-header-font-family);
+        color: @m-color;
+        margin-top: 6px;
+    }
+    
 
     &__item {
         .display();

@@ -1,5 +1,4 @@
 .link {
-    text-decoration: none;
 
     &__title-aside._bold {
         .font-bold();
@@ -23,6 +22,7 @@
 
     &._link-middle {
         color: @color-link-middle;
+        text-decoration: none;
     }
 
     &__img {
@@ -78,11 +78,6 @@
         &._main {
             .img-size(44px, 44px);
             margin: 0;
-
-            // &:hover {
-            //     position: relative;
-            //     top: -4px;
-            // }
         }
 
         &._wrapper {
@@ -107,6 +102,10 @@
     }
 
     &__text {
+
+        text-decoration: none;
+        color: inherit;
+
         &._link-text-add {
             .font-small();
         }
@@ -119,11 +118,14 @@
                 color: @color-link;
             }
         }
+
+        
     }
 
     &._link-main {
         color: @color-main;
         margin-right: 12px;
+        text-decoration: none;
         .font-bold(15px);
     }
 
@@ -131,6 +133,7 @@
         .font-light();
         color: @color-option;
         margin-left: 12px;
+        text-decoration: none;
     }
 
     &__icon:hover {
@@ -140,6 +143,8 @@
     &__row {
         display: flex;
         align-items: center;
+        list-style-type: none;
+
     }
 
     &:hover {
@@ -155,4 +160,38 @@
     &:focus {
         outline: 2px solid @color-search;
     }
+
+    // MAIL
+
+    &._mail:hover {
+        color: inherit;
+        cursor: inherit;
+    }
+
+    &__m-text {
+        line-height: 0;
+        text-decoration: none;
+        color: inherit;
+        white-space: nowrap;
+        padding: 6px;
+
+        &:hover {
+            color: @m-color-link;
+        }
+
+        &:not(last-child) {
+            margin-right: 6px;
+        }
+
+        &._bold { 
+            .font-bold(@font-small); 
+            line-height: 0;
+        }
+
+        &._light {
+            .font-light(@font-small);
+            line-height: 0;
+        }
+    }
+
 }
