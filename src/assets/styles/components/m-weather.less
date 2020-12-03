@@ -16,13 +16,10 @@
 
         &._bold {
             color: @m-clr-black;
-            font-size: 15px;
-            font-weight: 700;
+            .m-font-bold(15px);
         }
 
         &._light {
-            font-size: 13px;
-            font-weight: 400;
             color: @m-color;
         }
 
@@ -42,9 +39,8 @@
 
     &__temp {
         margin: 0 12px;
-        font-size: 24px;
+        .m-font-bold(@font-big);
         line-height: 32px;
-        font-weight: 700;
     }
 
     &__description {
@@ -54,9 +50,7 @@
     }
 
     &__humidity {
-        font-size: 13px;
         line-height: 20px;
-        font-weight: 400;
         color: @color-currency-change;
     }
 

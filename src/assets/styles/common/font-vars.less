@@ -9,7 +9,10 @@
 @font-input: 14px;
 @font-middle: 16px;
 @font-wth-traf: 26px;
+// пока не стала объединять в одну переменную
 @font-header-light: 11px;
+@font-small-normal: 11px;
+@font-big: 24px;
 
 .ya-font-base() {
    font-family: @ya-font-family;
@@ -67,4 +70,9 @@
 
 .font-notif() {
    font-size: 12px;
+}
+
+.m-font-bold(@size: @font-normal-size) {
+   font-weight: 700;
+   font-size: @size;
 }
