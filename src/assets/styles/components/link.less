@@ -1,4 +1,5 @@
 .link {
+    text-decoration: none;
 
     &__title-aside._bold {
         .font-bold();
@@ -15,7 +16,7 @@
         transition: transform .2s linear;
     }
 
-    &._link-transition-up:hover > .link__img{
+    &._link-transition-up:hover>.link__img {
         transform: translateY(-4px);
         transition: transform .2s linear;
     }
@@ -119,7 +120,7 @@
             }
         }
 
-        
+
     }
 
     &._link-main {
@@ -183,8 +184,8 @@
             margin-right: 6px;
         }
 
-        &._bold { 
-            .font-bold(@font-small); 
+        &._bold {
+            .font-bold(@font-small);
             line-height: 0;
         }
 
@@ -194,4 +195,90 @@
         }
     }
 
+    &._m-main {
+        color: #005bd1;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 20px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__m-main-text {
+
+        color: @m-color;
+
+        &._m-big-light {
+            font-size: @m-font-small;
+            line-height: 20px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            color: @m-color;
+        }
+    }
+
+    &__list-titles {
+        white-space: nowrap;
+
+        &._main {
+            margin-left: 0;
+            .m-font-bold(@m-font-small);
+        }
+
+        &._active {
+            color: @m-color;
+            .m-font-bold(@m-font-small);
+
+            &:after {
+                content: '';
+                display: block;
+                height: 2px;
+                background: @m-color;
+                transform: translateY(8px);
+            }
+        }
+
+        &._unselected {
+            margin-left: 24px;
+        }
+    }
+
+    &._hover {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &-decor {
+            text-decoration: none;
+
+            &:after {
+                content: '';
+                display: block;
+                height: 2px;
+                background: transparent;
+                transform: translateY(8px);
+            }
+
+            &:hover {
+                color: inherit;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    background: @color-currency-change;
+                    transform: translateY(8px);
+                }
+
+            }
+        }
+    }
 }

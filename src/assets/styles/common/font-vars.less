@@ -13,6 +13,8 @@
 @font-header-light: 11px;
 @font-small-normal: 11px;
 @font-big: 24px;
+@m-font-middle: 17px;
+@m-font-small: 15px;
 
 .ya-font-base() {
    font-family: @ya-font-family;
@@ -25,7 +27,7 @@
    font-family: @font-family;
    font-weight: 400;
    font-style: normal;
-   font-size: @font-normal-size;
+   font-size: @m-font-small;
 }
 
 .font-light(@size: @font-normal-size) {
@@ -75,4 +77,8 @@
 .m-font-bold(@size: @font-normal-size) {
    font-weight: 700;
    font-size: @size;
+}
+
+.m-font-middle(){
+   font-size: @m-font-middle;
 }

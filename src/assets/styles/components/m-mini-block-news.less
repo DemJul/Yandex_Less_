@@ -1,0 +1,27 @@
+.m-mini-block-news {
+    display: flex;
+    align-items: center;
+
+    &__img {
+        max-width: 64px;
+        height: 48px;
+        border-radius: 4px;
+    }
+
+    &__text-wrapper {
+        margin-left: 12px;
+    }
+
+    &__text-main {
+        color: @m-color-light;
+        text-decoration: none;
+    }
+
+    &:hover &__text-main {
+        text-decoration: underline;
+    }
+
+    &__text-descrip {
+        color: @m-clr-black !important;
+    }
+}

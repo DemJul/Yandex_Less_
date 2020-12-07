@@ -103,4 +103,101 @@ function say() {
   counter.set(-17);
   counter.decrease();
   counter();
+
+  //Декоратор + bind
+  function work(a, b) {
+  alert( a + b ); // произвольная функция или метод
+}
+
+function spy(func) {
+	
+  function callsCounter(...params) {
+		callsCounter.calls.push(params);
+    return func.apply(this, arguments)
+  }
+  callsCounter.calls = new Array();
+  
+  return callsCounter;
+  
+}
+
+work = spy(work);
+
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (let args of work.calls) {
+  alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+}
+
+//2
+function f(x) {
+  alert(x);
+}
+
+function delay(func) {
+	let count = arguments[1];
+	function wrapper(params) {
+	 //1 вариант  setTimeout(() => func.call(this, params), count);
+   //2
+	    setTimeout(() => func.apply(this, arguments), count);
+      //3 Error setTimeout(func.apply(this, arguments), count); 
+      //this=window
+	  }
+  
+  return wrapper;
+}
+
+// создаём обёртки
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+
+f1000("test"); // показывает "test" после 1000 мс
+f1500("test"); // показывает "test" после 1500 мс
+
+//3
+
+function debounce(func, ms) {
+
+  let permission = false;
+
+  return function() {
+    if (!permission){
+      func.apply(this, arguments);
+
+      permission = true;
+      setTimeout(() => permission = false, ms);
+      
+    } else return;
+  };
+}
+
+
+
+let f = debounce(alert, 1000);
+
+f(1); // выполняется немедленно
+f(2); // проигнорирован
+
+setTimeout( () => f(3), 100); // проигнорирован (прошло только 100 мс)
+setTimeout( () => f(4), 1100); // выполняется
+setTimeout( () => f(5), 1500); // проигнорирован (прошло только 400 мс от последнего вызова)
+
+//частичное применение
+function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
+
+let user = {
+  name: 'John',
+
+  login(result) {
+    alert( this.name + (result ? ' logged in' : ' failed to log in') );
+  }
+};
+
+askPassword(user.login.bind(user, true), user.login.bind(user, false)); // ?
   

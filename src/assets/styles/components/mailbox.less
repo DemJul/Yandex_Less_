@@ -19,9 +19,17 @@
         .img-size(16px, 12px);
         fill: @m-main-bg;
 
+        &._height {
+            .img-size(16px, 16px) !important;
+        }
+
         &:not(:last-child) {
             margin-right: 20px;
             transform: translateY(2px);
+        }
+
+        &:hover {
+            cursor: pointer;
         }
 
     }
@@ -40,5 +48,14 @@
         padding: 0 15px;
         box-sizing: border-box;
         background-color: @m-main-bg;
+    }
+
+    &__create-link {
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 16px;
+        border-top: 1px solid @m-clr-hr;
+        text-align: center;
+        text-decoration: none;
     }
 }
