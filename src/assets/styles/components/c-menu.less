@@ -9,6 +9,12 @@
   &__item {
     flex: 1;
     border-right: 1px solid @c-color-bl-in-gradi;
+
+    @media screen and (max-width: 1250px) {
+      &:last-child {
+        border-right: none;
+      }
+    }
   }
 
   &__item:first-child {
