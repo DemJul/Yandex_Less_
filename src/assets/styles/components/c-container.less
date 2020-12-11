@@ -1,0 +1,33 @@
+.c-container {
+  height: 100%;
+  background: @c-clr-black;
+  color: @c-white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  .c-font-base();
+
+  &__wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  &__svg-store._hidden {
+    .hidden();
+  }
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, @c-color-bl-in-gradi, @c-color-bl-in-gradi 1px, @c-color-bl-in-gradi-second 0, @c-color-bl-in-gradi-second);
+  }
+
+  &::-webkit-scrollbar {
+    width: 30px;
+    height: 30px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, @c-color-orange, @c-color-pink);
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px @c-color-box-shd;
+  }
+}

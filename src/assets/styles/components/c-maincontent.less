@@ -1,0 +1,26 @@
+.c-maincontent {
+  display: flex;
+  justify-content: space-between;
+  .c-font-base(@c-second-font-family);
+
+  @media screen and (max-width: 1250px) {
+    & {
+      padding: 18px;
+    }
+  }
+
+  &__advertising {
+    width: 300px;
+    height: 100%;
+  }
+
+  &__hero-article {
+    margin-bottom: 77px;
+  }
+
+  @media screen and (max-width: 855px) {
+    & {
+      padding: 8px;
+    }
+  }
+}

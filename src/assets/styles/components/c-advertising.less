@@ -1,0 +1,34 @@
+.c-advertising {
+
+    transform: translate(-58px, 153px);
+
+    &__img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 0 33px @c-color-shadow;
+    }
+
+    &__title {
+        display: block;
+        font-size: 0.7rem;
+    }
+
+    &__descr {
+        display: block;
+        font-size: 0.79rem;
+    }
+
+    &__text {
+        text-align: left;
+        .c-font-normal(.63rem);
+        white-space: normal;
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+
+    @media screen and (max-width: 1250px) {
+        & {
+            .hidden();
+        }
+    }
+}

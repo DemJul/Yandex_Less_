@@ -1,0 +1,127 @@
+.c-hero-article {
+  position: relative;
+  width: calc(100% - 377px);
+  padding: 20px;
+  overflow: hidden;
+  .c-font-normal(@c-font);
+  font-style: normal;
+
+  &__content {
+    overflow-wrap: break-word;
+    margin: 0 0 1.5rem;
+    border-radius: 8px;
+    .c-font-normal(@c-font);
+  }
+
+  &__publication {
+    .c-second-font-base();
+    margin: 0 0 0.5rem;
+  }
+
+  &__publication-tag {
+    margin: 0 0.3rem 0 0;
+  }
+
+  @media screen and (max-width: 1250px) {
+    & {
+      .c-font-normal(@font-middle);
+      padding: 18px;
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    & {
+      width: 100%;
+    }
+  }
+
+  &__tag {
+    white-space: nowrap;
+    border: 3px solid @c-color-border;
+    border-radius: 2rem;
+    padding: 0.2rem 0.85rem 0.25rem;
+
+    &:hover {
+      border: 3px solid @c-white;
+    }
+  }
+
+  &__tags {
+    margin: 1rem 0 2rem;
+    padding: 0.5rem 0 1rem;
+    line-height: 3;
+    .c-font-base(@c-font-family);
+
+    @media screen and (max-width: 1250px) {
+      & {
+        .c-font-normal(@font-input);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    &__publication-tag {
+      .m-font-bold(@c-font-middle);
+    }
+  }
+
+  @media screen and (max-width: 855px) {
+    &__publication-tag {
+      .m-font-bold(@font-middle);
+    }
+  }
+
+  &__publication-date {
+    color: @c-color-date;
+  }
+
+  &__title {
+    .c-font-base(@c-font-family);
+    .m-font-bold(@c-font-big);
+    margin: 0 0 2rem;
+    line-height: 1;
+
+  }
+
+  @media screen and (max-width: 1250px) {
+    &__title {
+
+      .m-font-bold(@c-font-big_middle);
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 855px) {
+    &__title {
+      .m-font-bold(@c-font-big_small);
+    }
+  }
+
+  &__content-meta {
+    margin: 0 0 1.8rem;
+  }
+
+  @media screen and (max-width: 1250px) {
+    &__content-meta {
+      .c-font-normal(@font-small);
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    &__content {
+      .c-font-normal(@c-font-middle);
+    }
+  }
+
+  @media screen and (max-width: 855px) {
+    &__content {
+      .c-font-normal(@font-middle);
+    }
+  }
+
+  &__descr {
+    max-width: 700px;
+    margin-bottom: 34px;
+  }
+}

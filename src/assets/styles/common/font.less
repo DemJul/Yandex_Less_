@@ -3,9 +3,11 @@
 .font-face(@font-family, @font-weight, @path) {
     @font-face {
         font-family: @font-family;
-        src: url("@{path}.woff2");
+        src: url("@{path}");
         font-weight: @font-weight;
     }
 }
 
-.font-face("YS Text", 400, "./fonts/YandexSans-Regular");
+.font-face("YS Text", 400, "./fonts/YandexSans-Regular.woff2");
+.font-face("Rubic", 700, "./fonts/Rubik-Bold.woff");
+.font-face("Sentinel", 400, "./fonts/Sentinel-Semibold.otf");

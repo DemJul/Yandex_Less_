@@ -67,6 +67,35 @@ gulp.task("svgstore_mail", function() {
         .pipe(gulp.dest("./src"));
 });
 
+gulp.task("svgstore_css-tricks", function() {
+    const svgs = gulp
+        .src("./src/assets/icons/icons__css-tricks/**/*.svg")
+        .pipe(
+            svgmin(function() {
+                return {
+                    plugins: [{
+                            removeTitle: true,
+                        },
+                        {
+                            removeStyleElement: true,
+                        },
+                    ],
+                };
+            })
+        )
+        .pipe(rename({ prefix: "icon-" }))
+        .pipe(svgstore({ inlineSvg: true }));
+
+    function fileContents(filePath, file) {
+        return file.contents.toString();
+    }
+
+    return gulp
+        .src("./src/css-tricks.html")
+        .pipe(inject(svgs, { transform: fileContents }))
+        .pipe(gulp.dest("./src"));
+});
+
 gulp.task("less", function() {
     return src("./src/assets/styles/main.less")
         .pipe(less())
@@ -90,8 +119,20 @@ gulp.task("html_mail", function() {
     return gulp.src("./src/mail.html").pipe(gulp.dest("./dist"));
 });
 
+gulp.task("html_css-tricks", function() {
+    return gulp.src("./src/css-tricks.html").pipe(gulp.dest("./dist"));
+});
+
 gulp.task("fonts", function() {
     return gulp.src("./src/assets/fonts/*").pipe(gulp.dest("./dist/fonts"));
+});
+
+gulp.task("script", function() {
+    return gulp.src("./src/assets/script/*").pipe(gulp.dest("./dist/script"));
+});
+
+gulp.task("js", function() {
+    return gulp.src("./src/assets/js/*").pipe(gulp.dest("./dist/js"));
 });
 
 gulp.task("icons", function() {
@@ -109,13 +150,18 @@ gulp.task("serve", function() {
     gulp.watch("./src/index.html").on("change", series("html"));
     gulp.watch("./src/yandex.html").on("change", series("html_yandex"));
     gulp.watch("./src/mail.html").on("change", series("html_mail"));
-
+    gulp.watch("./src/css-tricks.html").on("change", series("html_css-tricks"));
+    gulp.watch("./src/script/yandex.js").on("change", series("script"));
+    
     gulp.watch("./dist/style.css").on("change", browserSync.reload);
+    gulp.watch("./dist/script/yandex.js").on("change", browserSync.reload);
     gulp.watch("./dist/index.html").on("change", browserSync.reload);
     gulp.watch("./dist/yandex.html").on("change", browserSync.reload);
+    gulp.watch("./dist/css-tricks.html").on("change", browserSync.reload);
     gulp.watch("./dist/mail.html").on("change", browserSync.reload);
+    gulp.watch("./dist/script/yandex.js").on("change", browserSync.reload);
 });
 
-gulp.task("build", series("svgstore_yandex", "svgstore_mail", "less", "html", "html_yandex", "html_mail", "fonts", "icons"));
+gulp.task("build", series("svgstore_yandex", "svgstore_mail", "svgstore_css-tricks", "less", "html", "html_yandex", "html_mail","html_css-tricks", "fonts","script", "js", "icons"));
 
-gulp.task("default", series("svgstore_yandex", "svgstore_mail", parallel("html", "html_yandex", "html_mail", "less", "fonts", "icons"), "serve"));
+gulp.task("default", series("svgstore_yandex", "svgstore_mail","svgstore_css-tricks", parallel("html", "html_yandex", "html_mail","html_css-tricks", "less","js", "fonts", "script", "icons"), "serve"));
