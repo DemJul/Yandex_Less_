@@ -24,13 +24,13 @@
     overflow: hidden;
     margin: 16px 10px;
     background-position: center;
-    .img-size(60px,60px);
+    .img-size(60px, 60px);
     background-image: url("./images/c-mini-author.jpeg");
-    
+
   }
 
   &__avatar-img._secondary {
-    .img-size(40px,40px);
+    .img-size(40px, 40px);
   }
 
   &__avatar-circle {
@@ -47,13 +47,17 @@
   }
 
   &__avatar-circle._secondary {
-    .img-size(60px,48px);
+    .img-size(60px, 48px);
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
+
+    @media screen and (max-width: 650px) {
+      font-size: 0.8rem;
+    }
   }
 
   &__prefix {
