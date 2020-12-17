@@ -164,10 +164,17 @@
 
     // MAIL
 
-    &._mail:hover {
-        color: inherit;
-        cursor: inherit;
+    &._mail {
+        &:hover {
+            color: inherit;
+            cursor: inherit;
+        }
+
+        &:focus {
+            outline: 2px solid @color-base;
+        }
     }
+
 
     &__m-text {
         line-height: 0;
@@ -193,10 +200,14 @@
             .font-light(@font-small);
             line-height: 0;
         }
+
+        &:focus {
+            outline: 2px solid @color-base;
+        }
     }
 
     &._m-main {
-        color: #005bd1;
+        color: @m-color;
         text-decoration: none;
         font-weight: 700;
         font-size: 15px;
@@ -204,6 +215,10 @@
 
         &:hover {
             text-decoration: underline;
+        }
+
+        &:focus {
+            outline: 2px solid @color-base;
         }
     }
 
@@ -214,11 +229,19 @@
         &._m-big-light {
             font-size: @m-font-small;
             line-height: 20px;
+
+            &:focus {
+                outline: 2px solid @color-base;
+            }
         }
 
         &:hover {
             text-decoration: underline;
             color: @m-color;
+        }
+
+        &:focus {
+            outline: 2px solid @color-base;
         }
     }
 
@@ -245,6 +268,10 @@
 
         &._unselected {
             margin-left: 24px;
+        }
+
+        &:focus {
+            outline: 2px solid @color-base;
         }
     }
 
@@ -280,7 +307,8 @@
 
             }
         }
-        &-underline{
+
+        &-underline {
             text-decoration: underline;
 
             &:hover {
@@ -289,6 +317,10 @@
                 transition: text-decoration .3s;
             }
         }
-           
+
+        &:focus {
+            outline: 2px solid @color-base;
+        }
+
     }
 }
